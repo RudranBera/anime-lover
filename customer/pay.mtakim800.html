@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>aakash</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+        button {
+            background-color:seablue;
+            color: black;
+            padding: 10px;
+            font-size: 10px;
+            border: red;
+            cursor: pointer;
+        }
+        .dropbtn {
+  background-color: ;
+  color: white;
+  padding: 10px;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color:;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 15px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: ;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: ;}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: white;
+    background-color:;
+  
+}
+
+        button {
+            background-color:lightblue ;
+            color: white;
+            padding: 10px;
+            font-size: 10px;
+            border: red;
+            cursor: pointer;
+        }
+* {
+  box-sizing: border-box;}
+   * {
+  box-sizing: border-box;
+}
+
+
+
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<div class="dropdown" style="float:left;">
+  <button class="dropbtn"style="background-color:white;"><img src ="https://ik.imagekit.io/ucwb0rxvvrm/download_yNbip-Hz_.png?updatedAt=1678846060180"height="20px"width="20px"></img></button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<center><img src="https://ik.imagekit.io/ucwb0rxvvrm/download_yNbip-Hz_.png?updatedAt=1678846060180"width="80px"height="80px"></center>
+<center><p ><small>
+Welcome to CUSTOMBOX payment PORTAL
+</small></p></center>
+<center>
+<p><img src="https://ik.imagekit.io/ucwb0rxvvrm/download__3__OtPHnsU6H.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669488918962"height="30px"width="30px">logged in as mtakim800@gmail.com</p>
+</center>
+<center>
+
+  <br>
+  <br>
+ <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=AZYlPXVNTOjMhhyCfkMOu5inou8H-_hvbV7anrNktwoY0d3TtKC22WlEx7q4icvnZ3JzqLGATSdDBCCU&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"CUSTOM SEEDBOX\nCUSTOMBOX#230323@001","amount":{"currency_code":"USD","value":75}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+        
+  </center>
+ 
+</body>
+
+
+
+
+
+</html>
